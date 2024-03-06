@@ -1,1 +1,11 @@
-<p>layout-page works!</p>
+<mat-toolbar color="primary">
+    <span class="menuName" routerLink="list">Visor Heroes</span>
+    <button  mat-button class="mx-3" *ngFor="let item of menuItems" [routerLink]="item.url">
+        <mat-icon>{{item.icon}}</mat-icon>
+        {{item.label}}
+    </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<h2></h2>
