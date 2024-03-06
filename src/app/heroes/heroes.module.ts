@@ -8,6 +8,7 @@ import { HeroPageComponent } from './pages/hero-page/hero-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
+import { CardHeroesComponent } from './components/card-heroes/card-heroes.component';
 
 
 @NgModule({
@@ -16,12 +17,14 @@ import { MaterialModule } from '../material/material.module';
     ListPageComponent,
     HeroPageComponent,
     NewPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    CardHeroesComponent
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     MaterialModule
-  ]
+  ],
+  exports:[]
 })
 export class HeroesModule { }
