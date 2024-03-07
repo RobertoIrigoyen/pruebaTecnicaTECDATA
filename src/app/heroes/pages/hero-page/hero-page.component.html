@@ -43,6 +43,10 @@
                 <button mat-button color="warn" (click)="goBack()">
                     Regresar
                 </button>
+                <button class="mx-1" mat-button mat-raised color="primary" [routerLink]="['/heroes/edit',heroInfo.id]">
+                    <mat-icon>edit</mat-icon> Editar
+
+                  </button>
             </mat-card-content>
         </mat-card>
     </div>

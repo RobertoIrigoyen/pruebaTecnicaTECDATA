@@ -17,7 +17,7 @@ export class ListPageComponent implements OnInit {
   ngOnInit(): void {
     this.heroes.getHeroes()
       .pipe(
-        delay(3000)
+        delay(1500)
       )
       .subscribe(heroes => {
         if (!heroes) {
