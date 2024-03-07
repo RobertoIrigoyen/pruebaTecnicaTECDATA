@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
 import { Hero } from '../../interfaces/heroes.interface';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-list-page',
@@ -10,9 +11,20 @@ import { Hero } from '../../interfaces/heroes.interface';
 export class ListPageComponent implements OnInit {
 
   public heroesList: Hero[] = []
-
-  constructor(private heroes: HeroesService){}
+  public noHero: boolean = false;
+  public loading: boolean = true
+  constructor(private heroes: HeroesService) { }
   ngOnInit(): void {
-    this.heroes.getHeroes().subscribe(heroes => this.heroesList = heroes);
+    this.heroes.getHeroes()
+      .pipe(
+        delay(3000)
+      )
+      .subscribe(heroes => {
+        if (!heroes) {
+          this.noHero = true;
+        }
+        this.loading = false;
+        this.heroesList = heroes;
+      });
   }
 }

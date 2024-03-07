@@ -9,6 +9,7 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
 import { CardHeroesComponent } from './components/card-heroes/card-heroes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CardHeroesComponent } from './components/card-heroes/card-heroes.compon
   imports: [
     CommonModule,
     HeroesRoutingModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   exports:[]

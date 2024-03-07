@@ -1,1 +1,49 @@
-<p>hero-page works!</p>
+<ng-template #divLoading>
+    <div class="grid justify-content-center align-items-center mt-5">
+        <div class="col-1">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</ng-template>
+<div *ngIf="noHero; else heroTemplate">
+    <p>No se encontró ningún héroe.</p>
+    <button mat-button color="warn" (click)="goBack()">
+        Regresar
+    </button>
+</div>
+
+<ng-template #heroTemplate>
+    <div *ngIf="heroInfo; else divLoading" class="grid mt-2 p-3">
+        <mat-card class="col-12 sm:col-6">
+            <mat-card-header>
+                <mat-card-title>
+                    {{heroInfo.alter_ego}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{heroInfo.superhero}}
+                </mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+        <mat-card class="col-12 sm:col-6">
+            <mat-card-header>
+                <mat-card-title>
+                    Información
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{heroInfo.superhero}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item><strong>Primera aparición: </strong>{{heroInfo.first_appearance}}</mat-list-item>
+                    <mat-list-item><strong>Personajes que han portado el manto del héroe: </strong>{{heroInfo.characters}}</mat-list-item>
+                    <mat-list-item><strong>Editorial: </strong>{{heroInfo.publisher}}</mat-list-item>
+                    <mat-list-item><strong>Nombre del primero heroe con el manto: </strong>{{heroInfo.alter_ego}}</mat-list-item>
+                </mat-list>
+                <button mat-button color="warn" (click)="goBack()">
+                    Regresar
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-template>
