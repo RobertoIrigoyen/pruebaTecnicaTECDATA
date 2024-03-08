@@ -21,7 +21,7 @@ export class NewPageComponent implements OnInit {
     alter_ego: new FormControl('', Validators.required),
     first_appearance: new FormControl('', Validators.required),
     characters: new FormControl('', Validators.required),
-    /*  alt_image: new FormControl(''), */
+    img: new FormControl(''),
   })
 
   public publishers = [

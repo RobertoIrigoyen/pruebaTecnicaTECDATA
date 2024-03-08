@@ -6,6 +6,7 @@ export interface Hero {
     publisher:        Publisher;
     alter_ego:        string;
     first_appearance: string;
+    img:              string;
     characters:       string;
 }
 

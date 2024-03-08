@@ -23,6 +23,7 @@
                     {{heroInfo.superhero}}
                 </mat-card-subtitle>
             </mat-card-header>
+            <img [src]="heroInfo | heroImage" [alt]="heroInfo.superhero" mat-card-image>
         </mat-card>
         <mat-card class="col-12 sm:col-6">
             <mat-card-header>
