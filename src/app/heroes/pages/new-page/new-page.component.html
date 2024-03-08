@@ -47,7 +47,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <div class="md:col-6 col-12">
+    <div class="md:col-6 col-12" *ngIf="currentHero.img">
         <mat-card>
             <img [src]="currentHero | heroImage" [alt]="currentHero.img" mat-card-image>
         </mat-card>
